@@ -1,185 +1,64 @@
-# Representation-of-a-Real-World-Problem-as-a-Markov-Decision-Process
+# EXPERIMENT: 1
 
+## Representation of a Real-World Problem as a Markov Decision Process (MDP)
 
-## Aim
+### Title: Smart Irrigation System Using MDP
 
-Write your aim here.
+### 1. Aim
 
-Example:
+To implement a Smart Irrigation System using a Markov Decision Process (MDP) to control water supply based on soil moisture levels.
 
-> To identify a real-world sequential decision-making problem and represent it formally as a Markov Decision Process by defining its states, actions, rewards, transitions, and Python representation.
+### 2. Problem Statement
 
----
+A smart irrigation system automatically supplies water to plants based on soil moisture. It must decide whether to water the plants or wait based on the current soil condition.
 
-## Problem Statement
+Using MDP, the system can reduce water wastage and maintain proper soil moisture for healthy plant growth.
 
-### Problem Description
+### 3. MDP Components
 
-Write your answer here.
+| Component       | Description                                     |
+| --------------- | ----------------------------------------------- |
+| States (S)      | Dry Soil, Moist Soil, Wet Soil                  |
+| Actions (A)     | Water, Wait                                     |
+| Transition (P)  | Probability of moving to another soil condition |
+| Reward (R)      | Reward received after an action                 |
+| Discount Factor | 0.9                                             |
 
-Describe the real-world application that you selected.
+### 4. Reward Function
 
+| Condition    | Reward |
+| ------------ | -----: |
+| Moist Soil   |    +10 |
+| Dry Soil     |     -5 |
+| Wet Soil     |     -3 |
+| Water Action |     +2 |
+| Wait Action  |     -1 |
 
----
+### 5. Algorithm
 
-## MDP Components
+1. Start the program.
+2. Initialize the soil states and actions.
+3. Define transition probabilities.
+4. Assign rewards to each state.
+5. Select the current soil condition.
+6. Choose an appropriate action.
+7. Calculate the next state and reward.
+8. Display the result.
+9. Stop.
 
-A Markov Decision Process is represented as:
-
-$$
-MDP = (S, A, P, R, \gamma)
-$$
-
-Where:
-
-| Symbol | Meaning |
-|---|---|
-| $S$ | Set of states |
-| $A$ | Set of actions |
-| $P$ | Transition probability function |
-| $R$ | Reward function |
-| $\gamma$ | Discount factor |
-
----
-
-## State Space
-
-Write your answer here.
-
-The state space should list all possible situations in which the agent can exist.
-
-Example format:
-
-```text
-S = {
-    State 1,
-    State 2,
-    State 3,
-    ...
-}
-```
-
-
-
----
-
-## Sample State
-
-Write your answer here.
-
-A sample state is one specific example from the state space.
-
-
-
----
-
-## Action Space
-
-Write your answer here.
-
-The action space should list all possible actions available to the agent.
-
-Example format:
-
-```text
-A = {
-    Action 1,
-    Action 2,
-    Action 3,
-    ...
-}
-```
-
-
----
-
-## Sample Action
-
-Write your answer here.
-
-A sample action is one action selected from the action space.
-
-
-
----
-
-## Transition Probability
-
-Write your answer here.
-
-The transition probability explains how the environment moves from one state to another after an action is taken.
-
-General form:
-
-$$
-P(s' \mid s,a)
-$$
-
-This means:
-
-> Probability of reaching next state $s'$ after taking action $a$ in current state $s$.
-
-
----
-
-## Reward Function
-
-Write your answer here.
-
-The reward function defines the feedback received by the agent after taking an action.
-
-General form:
-
-$$
-R(s,a,s')
-$$
-
-
-
----
-
-## Graphical Representation
-
-Write your answer here.
-
-Draw the MDP graph.
-
-The graph should include:
-
-1. States as nodes.
-2. Actions as arrows.
-3. Rewards on transitions.
-4. Transition probabilities if applicable.
-
-
----
-
-## Python Representation
-
-Write your code here.
-
-Use Python dictionaries to represent the MDP.
-
+### 6. Python Program
 
 ```python
-# MDP Representation using Python
-# print("Name:       ")
-# print("Register Number:     ")
+import random
 
+print("SMART IRRIGATION SYSTEM USING MDP")
+print("---------------------------------")
+
+# States
+states = ["Dry Soil", "Moist Soil", "Wet Soil"]
+
+# Actions
+actions = ["Water", "Wait"]
+
+# Discount factor
 ```
----
-## Output
-
-Write your Python output here.
-
-
----
-
-## Result
-
-Write your result here.
-
-
-
----
-

@@ -61,4 +61,83 @@ states = ["Dry Soil", "Moist Soil", "Wet Soil"]
 actions = ["Water", "Wait"]
 
 # Discount factor
+gamma = 0.9
+
+# Rewards
+rewards = {
+    "Dry Soil": -5,
+    "Moist Soil": 10,
+    "Wet Soil": -3
+}
+
+# Transition probabilities
+transitions = {
+    "Dry Soil": {
+        "Water": [0.1, 0.8, 0.1],
+        "Wait": [0.7, 0.2, 0.1]
+    },
+    "Moist Soil": {
+        "Water": [0.1, 0.3, 0.6],
+        "Wait": [0.2, 0.7, 0.1]
+    },
+    "Wet Soil": {
+        "Water": [0.1, 0.2, 0.7],
+        "Wait": [0.6, 0.3, 0.1]
+    }
+}
+
+# Current state
+current_state = "Dry Soil"
+
+# Select action
+action = "Water"
+
+# Determine next state
+random.seed(1)
+
+next_state = random.choices(
+    states,
+    weights=transitions[current_state][action],
+    k=1
+)[0]
+
+# Calculate reward
+reward = rewards[next_state]
+
+# Display results
+print("Current State:", current_state)
+print("Selected Action:", action)
+print("Next State:", next_state)
+print("Reward:", reward)
+print("Discount Factor:", gamma)
+print("MDP Simulation Completed Successfully!")
 ```
+
+### 7. Output
+
+```text
+SMART IRRIGATION SYSTEM USING MDP
+---------------------------------
+Current State: Dry Soil
+Selected Action: Water
+Next State: Moist Soil
+Reward: 10
+Discount Factor: 0.9
+MDP Simulation Completed Successfully!
+```
+
+### 8. MDP State Diagram
+
+**Dry Soil**
+
+Action: Water
+
+Transition probabilities:
+
+* 0.1 → Dry Soil (Reward: -5)
+* 0.8 → Moist Soil (Reward: +10)
+* 0.1 → Wet Soil (Reward: -3)
+
+### 9. Result
+
+Thus, the Smart Irrigation System was successfully represented using a Markov Decision Process. The soil states, actions, transition probabilities, and rewards were defined and simulated using Python.

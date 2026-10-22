@@ -105,6 +105,8 @@ next_state = random.choices(
 reward = rewards[next_state]
 
 # Display results
+print("Name: SARAN SADASIVAM")
+print("Register Number: 212225040385")
 print("Current State:", current_state)
 print("Selected Action:", action)
 print("Next State:", next_state)
